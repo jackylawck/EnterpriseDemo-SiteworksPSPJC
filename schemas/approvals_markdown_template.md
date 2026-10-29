@@ -23,3 +23,26 @@
 👉 [點此開啟上傳現場相片](@{outputs('Create_item')?['body/{Link}']})
 --------------------------------------------------
 確認無誤後，請於本卡片點擊 Approve 批准開工。
+
+```
+
+## 2. 經理終審卡片 (Manager Final-Tier Approval)
+
+**Title:** `【開工終審批准】@{triggerOutputs()?['body/SiteName']} - @{triggerOutputs()?['body/Location']}`
+
+**Details (Markdown):**
+
+```text
+監工已完成現場初審並確認合格，請經理進行開工終審：
+
+• 地盤名稱：@{triggerOutputs()?['body/SiteName']}
+• 施工位置：@{triggerOutputs()?['body/Location']}
+• 負責監工：@{outputs('Get_Supervisor_Data')?['body/Title']}
+• 監工巡查意見：@{outputs('Supervisor_Approval')?['body/ResponsesComments']}
+
+📷 現場相片與自檢詳情：
+👉 [點此檢視現場相片與完整記錄](@{outputs('Create_item')?['body/{Link}']})
+
+確認符合開工條件後，請點擊 Approve 簽發開工許可。
+
+```
