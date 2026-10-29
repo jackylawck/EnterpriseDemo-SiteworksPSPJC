@@ -64,7 +64,7 @@ flowchart TD
 1. **Frictionless Capture:** Utilizes anonymous MS Forms and dynamic dropdown routing for frontline workers without corporate M365 accounts.
 2. **State Machine Pattern:** Leverages SharePoint Lists as a lightweight relational database and state machine, driven by status nodes (`Pending Supervisor` ➔ `Pending PM` ➔ `Archived`).
 3. **Master Data Driven:** A separate `Supervisor-Directory` list manages personnel. Power Automate uses OData Filter Queries to route approvals dynamically, eliminating hardcoded emails.
-4. **Anti-Notification Fatigue:** Eliminates redundant parallel FYI branches. Admins are only notified of actionable, final decisions.
+4. **Strict Authorization Gating:** Prevents the administrative hazard of premature work commencement. The system strictly restricts official work permits from being dispatched to administration and frontline teams until the Project Manager has completed final approval, eliminating interim status ambiguity and establishing defensible audit boundaries.
 5. **Zero-License Cost:** 100% reliant on Standard Connectors (Forms, SharePoint, Approvals), saving significant Premium licensing costs.
 
 ---
@@ -118,7 +118,7 @@ flowchart TD
 1. **極簡前線採集 (Frictionless Capture)：** 針對工地前線無企業帳號的限制，採用 Forms 公開免登入設計，結合下拉式動態監工路由，達成掃碼即填的高效體驗。
 2. **SharePoint 狀態機 (State Machine)：** 運用 SharePoint List 作為關聯式數據庫與狀態機。全流程透過狀態節點驅動，進度完全透明。
 3. **主數據分離路由 (Master Data Driven)：** 設立獨立監工名冊清單。後台透過 OData Filter Query 動態解析監工電郵，人事異動時只需維護清單，無需修改自動化代碼。
-4. **資訊疲勞過濾 (Anti-Fatigue Design)：** 取消過早的平行知會分支，行政人員僅需接收具備最終效力的經理決策結果，大幅消除管理雜訊。
+4. **授權門閘硬防禦 (Strict Authorization Gating)：** 杜絕「未批先做」的管理盲點。系統嚴格限制僅在項目經理完成終審後才向行政與前線派發正式開工許可，避免過渡狀態被誤解為開工許可，落實工程審計的決策責任邊界。
 5. **零額外授權架構 (Zero-License Cost)：** 全架構 100% 採用 Standard Connectors，替企業省下高額 Premium 授權開銷。
 
 ---
@@ -130,4 +130,7 @@ This project is licensed under the **MIT License**.
 **Disclaimer:** This project is a generic enterprise demo created for academic, safety compliance, and architectural research. All data, organizational names, and endpoints used are fictional or generic placeholders. It does not constitute legal or occupational safety advice.
 
 本專案採 **MIT License** 授權發佈。
+
 **聲明：** 本專案為學術、安全合規與架構研究而建立之通用企業示範。所有使用的數據、組織名稱與端點皆為虛構或通用佔位符，不構成任何法律或職業安全建議。
+
+
